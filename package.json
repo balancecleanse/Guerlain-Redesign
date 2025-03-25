@@ -1,0 +1,42 @@
+{
+  "name": "guerlain-redesign",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "tailwindcss-init": "tailwindcss init -p"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@prisma/client": "^6.5.0",
+    "@react-three/fiber": "^9.1.0",
+    "@reduxjs/toolkit": "^2.6.1",
+    "axios": "^1.8.4",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.4.7",
+    "framer-motion": "^12.5.0",
+    "next": "15.2.4",
+    "next-auth": "^4.24.11",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "redux": "^5.0.1",
+    "three": "^0.174.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.4",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.15",
+    "typescript": "^5"
+  }
+}

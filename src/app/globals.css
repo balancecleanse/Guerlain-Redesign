@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .luxury-gradient {
+    background: linear-gradient(135deg, #1a1a1a 0%, #4d4d4d 100%);
+  }
+  .gold-text {
+    color: #d4af37;
+  }
+}
