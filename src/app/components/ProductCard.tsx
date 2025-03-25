@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
@@ -16,27 +18,32 @@ const ProductCard = ({ id, name, price, imageUrl, description }: ProductCardProp
 
   return (
     <motion.div
-      className="group relative bg-white p-6 rounded-lg shadow-lg"
-      whileHover={{ y: -5 }}
+      className="group relative luxury-card rounded-xl p-6"
+      whileHover={{ y: -5, scale: 1.02 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg">
+      <div className="relative aspect-square overflow-hidden rounded-lg mb-4">
         <Image
           src={imageUrl}
           alt={name}
-          width={400}
-          height={400}
-          className="object-cover object-center group-hover:scale-110 transition-transform duration-200"
+          fill
+          className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/images/placeholder.jpg';
+          }}
+          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+          priority
         />
       </div>
-      <div className="mt-4">
-        <h3 className="text-lg font-medium text-black">{name}</h3>
-        <p className="mt-1 text-sm text-gray-500">{description}</p>
-        <div className="mt-4 flex justify-between items-center">
-          <p className="text-xl gold-text">${price}</p>
+      <div className="space-y-2">
+        <h3 className="text-xl font-medium text-brown">{name}</h3>
+        <p className="text-sm text-brown/70">{description}</p>
+        <div className="flex justify-between items-center pt-4">
+          <p className="text-2xl luxury-text-gradient font-semibold">${price}</p>
           <button
             onClick={() => dispatch(addItem({ id, name, price, imageUrl }))}
-            className="bg-black text-white px-4 py-2 rounded hover:bg-gold transition-colors"
+            className="luxury-button px-6 py-2 rounded-full text-sm font-medium"
             aria-label={`Add ${name} to cart`}
           >
             Add to Cart

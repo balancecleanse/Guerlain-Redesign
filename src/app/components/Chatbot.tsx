@@ -1,3 +1,5 @@
+"use client";
+
 // src/app/components/Chatbot.tsx
 import { useState } from "react";
 

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -5,28 +7,27 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/80 backdrop-blur-md border-b border-gold/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="gold-text text-2xl font-bold">GUERLAIN</Link>
+        <div className="flex justify-between items-center h-20">
+          <Link href="/" className="luxury-text-gradient text-3xl font-bold">
+            GUERLAIN
+          </Link>
           
           <div className="hidden md:flex space-x-8">
-            <Link href="/fragrances" className="text-white hover:gold-text transition-colors">
-              Fragrances
-            </Link>
-            <Link href="/skincare" className="text-white hover:gold-text transition-colors">
-              Skincare
-            </Link>
-            <Link href="/makeup" className="text-white hover:gold-text transition-colors">
-              Makeup
-            </Link>
-            <Link href="/collections" className="text-white hover:gold-text transition-colors">
-              Collections
-            </Link>
+            {['Fragrances', 'Skincare', 'Makeup', 'Collections'].map((item) => (
+              <Link
+                key={item}
+                href={`/${item.toLowerCase()}`}
+                className="text-brown hover:luxury-text-gradient transition-all duration-300"
+              >
+                {item}
+              </Link>
+            ))}
           </div>
           
           <button 
-            className="text-white hover:gold-text transition-colors"
+            className="text-brown hover:text-gold transition-colors p-2 rounded-full hover:bg-gold/5"
             aria-label="Shopping Cart"
           >
             <span className="sr-only">Cart</span>

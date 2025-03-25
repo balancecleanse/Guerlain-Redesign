@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Provider } from 'react-redux';
-import { store } from './store/store';
+import Providers from './components/Providers';
 import Navigation from './components/Navigation';
 import "./globals.css";
 
@@ -28,12 +27,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Provider store={store}>
+        <Providers>
           <Navigation />
           <div className="pt-16"> {/* Add padding for fixed navbar */}
             {children}
           </div>
-        </Provider>
+        </Providers>
       </body>
     </html>
   );

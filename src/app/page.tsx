@@ -1,6 +1,6 @@
 // src/app/page.tsx
 import Hero from "@/app/components/Hero";
-import ARViewer from "@/app/components/ARViewer";
+// import ARViewer from "@/app/components/ARViewer";
 import Chatbot from "@/app/components/Chatbot";
 import ProductCard from "@/app/components/ProductCard";
 
@@ -9,7 +9,7 @@ const sampleProducts = [
     id: '1',
     name: 'L\'Essentiel Haute Perfumery',
     price: 159,
-    imageUrl: '/images/products/lessentiel.jpg',
+    imageUrl: '/lessentiel.jpg', // Updated path relative to public directory
     description: 'A luminous oriental fragrance'
   },
   // Add more sample products...
@@ -28,10 +28,11 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section className="mb-16">
+        {/* Temporarily comment out AR section until dependencies are properly installed */}
+        {/* <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8">Experience in AR</h2>
           <ARViewer modelPath="/models/perfume-bottle.gltf" />
-        </section>
+        </section> */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8">About Guerlain</h2>
           {/* About section content */}

@@ -3,15 +3,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gold: "#d4af37",
-        black: "#1a1a1a",
+        gold: {
+          light: 'var(--color-gold-light)',
+          DEFAULT: 'var(--color-gold)',
+          dark: 'var(--color-gold-dark)',
+        },
+        beige: 'var(--color-beige)',
+        cream: 'var(--color-cream)',
+        burgundy: 'var(--color-burgundy)',
+        brown: 'var(--color-brown)',
+      },
+      borderColor: {
+        gold: 'var(--color-gold)',
+      },
+      backgroundImage: {
+        'gradient-luxury': 'linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold) 50%, var(--color-gold-light) 100%)',
       },
     },
   },
-  purge: [],
-  darkMode: false, // or 'media' or 'class'
-  variants: {
-    extend: {},
-  },
   plugins: [],
-}
+  // Enable all color opacity variations
+  safelist: [
+    {
+      pattern: /(bg|text|border)-gold/,
+      variants: ['hover', 'focus', 'active'],
+    },
+  ],
+};

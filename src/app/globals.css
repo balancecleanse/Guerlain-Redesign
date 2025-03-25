@@ -2,10 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-gold-light: #f4e6be;
+  --color-gold: #d4af37;
+  --color-gold-dark: #9b7b1b;
+  --color-beige: #f5f5dc;
+  --color-cream: #fffdd0;
+  --color-burgundy: #800020;
+  --color-brown: #4a3c30;
+}
+
+@layer base {
+  body {
+    @apply bg-gradient-to-b from-beige to-cream;
+  }
+}
+
 @layer components {
   .luxury-gradient {
-    background: linear-gradient(135deg, #1a1a1a 0%, #4d4d4d 100%);
+    @apply bg-gradient-to-tr from-gold-dark via-gold to-gold-light;
   }
+  
+  .luxury-text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-dark via-gold to-gold-light;
+  }
+  
+  .luxury-card {
+    @apply bg-white/80 backdrop-blur-sm shadow-xl border border-[#d4af37]/10;
+  }
+
+  .luxury-input {
+    @apply bg-cream border-gold/20 focus:border-gold focus:ring-gold/20;
+  }
+
+  .luxury-button {
+    @apply luxury-gradient text-white hover:opacity-90 transition-all;
+  }
+
+  .media-container {
+    @apply relative w-full overflow-hidden;
+  }
+
+  .media-container::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  }
+
+  .media-content {
+    @apply absolute top-0 left-0 w-full h-full object-cover;
+  }
+
   .gold-text {
     color: #d4af37;
   }
