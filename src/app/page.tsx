@@ -9,10 +9,30 @@ const sampleProducts = [
     id: '1',
     name: 'L\'Essentiel Haute Perfumery',
     price: 159,
-    imageUrl: '/lessentiel.jpg', // Updated path relative to public directory
-    description: 'A luminous oriental fragrance'
+    imageUrl: '/images/products/featured-1.jpg',
+    description: 'A luminous oriental fragrance with notes of vanilla and bergamot'
   },
-  // Add more sample products...
+  {
+    id: '2',
+    name: 'Orchidée Impériale Black',
+    price: 189,
+    imageUrl: '/images/products/featured-2.jpg',
+    description: 'Exceptional complete anti-aging luxury cream with rare orchid extract'
+  },
+  {
+    id: '3',
+    name: 'Abeille Royale Double R',
+    price: 145,
+    imageUrl: '/images/products/featured-3.jpg',
+    description: 'Advanced youth treatment with royal jelly and honey repair technology'
+  },
+  {
+    id: '4',
+    name: 'Aqua Allegoria Rosa Rossa',
+    price: 165,
+    imageUrl: '/images/products/featured-4.jpg',
+    description: 'Fresh and radiant fragrance with Bulgarian rose and bergamot essence'
+  }
 ];
 
 export default function Home() {
@@ -24,7 +44,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold mb-12 text-center text-gradient">
             Featured Products
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {sampleProducts.map(product => (
               <ProductCard key={product.id} {...product} />
             ))}

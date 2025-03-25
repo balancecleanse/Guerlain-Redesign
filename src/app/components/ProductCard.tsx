@@ -18,11 +18,11 @@ const ProductCard = ({ id, name, price, imageUrl, description }: ProductCardProp
 
   return (
     <motion.div
-      className="group relative luxury-card rounded-xl p-6"
+      className="group relative luxury-card rounded-xl p-8"
       whileHover={{ y: -5, scale: 1.02 }}
       transition={{ duration: 0.2 }}
     >
-      <div className="relative aspect-square overflow-hidden rounded-lg mb-4">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-lg mb-6">
         <Image
           src={imageUrl}
           alt={name}
