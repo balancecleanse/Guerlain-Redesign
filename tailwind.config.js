@@ -19,13 +19,24 @@ module.exports = {
       backgroundImage: {
         'gradient-luxury': 'linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold) 50%, var(--color-gold-light) 100%)',
       },
+      ringColor: {
+        gold: 'var(--color-gold)',
+      },
+      ringOpacity: {
+        15: '0.15',
+        30: '0.30',
+      },
+      borderOpacity: {
+        15: '0.15',
+        20: '0.20',
+        30: '0.30',
+      },
     },
   },
   plugins: [],
-  // Enable all color opacity variations
   safelist: [
     {
-      pattern: /(bg|text|border)-gold/,
+      pattern: /(bg|text|border|ring|focus:ring|ring-opacity|border-opacity)-gold/,
       variants: ['hover', 'focus', 'active'],
     },
   ],

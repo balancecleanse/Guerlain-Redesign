@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Providers from './components/Providers';
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,12 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}>
         <Providers>
           <Navigation />
-          <div className="pt-16"> {/* Add padding for fixed navbar */}
+          <main className="flex-grow pt-16">
             {children}
-          </div>
+          </main>
+          <Footer />
         </Providers>
       </body>
     </html>

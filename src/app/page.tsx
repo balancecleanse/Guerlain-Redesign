@@ -17,29 +17,31 @@ const sampleProducts = [
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen">
       <Hero />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <section className="mb-16 mt-16">
-          <h2 className="text-3xl font-bold mb-8">Featured Products</h2>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
+        <section>
+          <h2 className="text-4xl font-bold mb-12 text-center text-gradient">
+            Featured Products
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sampleProducts.map(product => (
               <ProductCard key={product.id} {...product} />
             ))}
           </div>
         </section>
-        {/* Temporarily comment out AR section until dependencies are properly installed */}
-        {/* <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Experience in AR</h2>
-          <ARViewer modelPath="/models/perfume-bottle.gltf" />
-        </section> */}
-        <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">About Guerlain</h2>
-          {/* About section content */}
+
+        <section className="text-center max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold mb-8 text-gradient">About Guerlain</h2>
+          <p className="text-lg text-brown/70 leading-relaxed">
+            Discover our legacy of exceptional craftsmanship and innovative beauty solutions,
+            creating timeless fragrances and skincare that embody luxury and sophistication.
+          </p>
         </section>
-        <section>
-          <h2 className="text-3xl font-bold mb-8">Contact Us</h2>
-          {/* Contact form or information */}
+
+        <section className="text-center">
+          <h2 className="text-4xl font-bold mb-12 text-gradient">Contact Us</h2>
+          {/* Contact form implementation */}
         </section>
       </main>
       <Chatbot />

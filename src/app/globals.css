@@ -16,6 +16,10 @@
   body {
     @apply bg-gradient-to-b from-beige to-cream;
   }
+
+  input, textarea {
+    @apply focus:outline-none focus:ring-2 focus:ring-gold focus:ring-opacity-30 transition-shadow;
+  }
 }
 
 @layer components {
@@ -32,7 +36,9 @@
   }
 
   .luxury-input {
-    @apply bg-cream border-gold/20 focus:border-gold focus:ring-gold/20;
+    @apply bg-white/80 border-gold border-opacity-20 focus:border-gold 
+           focus:ring-2 focus:ring-gold focus:ring-opacity-30
+           rounded-lg transition-all duration-300;
   }
 
   .luxury-button {
@@ -55,5 +61,24 @@
 
   .gold-text {
     color: #d4af37;
+  }
+
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r 
+           from-gold-dark via-gold to-gold-light;
+  }
+}
+
+@layer utilities {
+  .ring-focus {
+    @apply focus:ring-2 focus:ring-gold/30;
+  }
+
+  .ring-gold-focus {
+    @apply focus:ring-2 focus:ring-gold focus:ring-opacity-30;
   }
 }
